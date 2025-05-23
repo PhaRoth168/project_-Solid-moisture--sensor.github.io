@@ -1,0 +1,76 @@
+body {
+    background-color: #e3edf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+.language a {
+          cursor: pointer;
+       }
+.card {
+background-color:white;
+border-radius: 12px;
+padding: 25px 30px;
+box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+width: 370px; 
+height: 470px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.profile {
+width: 150px;
+margin-bottom: 10px;
+}
+
+.login-card h3 {
+color:blue;
+
+font-size: 18px;
+}
+
+.login-card p {
+font-size: 14px;
+color: #444;
+}
+
+input[type="text"],
+input[type="password"] {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid red;
+border-radius: 10px;
+font-size: 16px;
+}
+
+.btn-login {
+background: blue;
+color:white;
+border: none;
+width: 100%;
+padding: 12px;
+font-size: 16px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.language {
+margin-top: 15px;
+font-size: 14px;
+}
+
+.language a {
+margin: 0 10px;
+color: #0071ce;
+text-decoration: none;
+}
+.message {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #0071ce;
+    display: none;
+  }

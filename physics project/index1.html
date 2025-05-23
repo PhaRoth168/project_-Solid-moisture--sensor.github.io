@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>project Solid moisture sensor</title>
+    <link rel="stylesheet" href="style1.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="card">
+        <img src="ngs.png" alt="Prek Leap Logo" class="profile">
+        <h3 data-i18n="schoolNameKhmer">វិទ្យាល័យព្រែកលៀប សាលារៀនជំនាន់ថ្មី</h3>
+        <p data-i18n="schoolNameEnglish">Prek Leap High School (New Generation School)</p>
+        <input type="text" placeholder="គោត្តនាមនិងនាម" data-i18n="namePlaceholder">
+        <input type="password" placeholder="ពាក្យសម្ងាត់" data-i18n="passwordPlaceholder">
+        <button class="btn-login" onclick="login()" data-i18n="loginButton">ចូលគណនី</button>
+
+        <div class="message" id="loadingText" style="display:none;" data-i18n="loadingText">សូមរង់ចាំ...</div>
+
+        <div class="language">
+            <a href="#" onclick="changeLanguage('km')">ភាសាខ្មែរ</a> | <a href="#" onclick="changeLanguage('en')">English</a>
+        </div>
+    </div>
+
+    <script>
+        const translations = {
+            km: {
+                schoolNameKhmer: "វិទ្យាល័យព្រែកលៀប សាលារៀនជំនាន់ថ្មី",
+                schoolNameEnglish: "Prek Leap High School (New Generation School)",
+                namePlaceholder: "គោត្តនាមនិងនាម",
+                passwordPlaceholder: "ពាក្យសម្ងាត់",
+                loginButton: "ចូលគណនី",
+                loadingText: "សូមរង់ចាំ..."
+            },
+            en: {
+                schoolNameKhmer: "Prek Leap High School", // Provide English translation even if it's a proper noun
+                schoolNameEnglish: "Prek Leap High School (New Generation School)",
+                namePlaceholder: "Username",
+                passwordPlaceholder: "Password",
+                loginButton: "Login",
+                loadingText: "Loading..."
+            }
+        };
+
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.dataset.i18n;
+                if (translations[lang] && translations[lang][key]) {
+                     if(element.tagName==="INPUT"){
+                        element.placeholder = translations[lang][key];
+                     }
+                     else
+                      element.textContent = translations[lang][key];
+                }
+            });
+        }
+
+        function login() {
+            var message = document.getElementById("loadingText");
+            message.style.display = "block";
+
+            setTimeout(function() {
+                window.location.href = "h.html"; // បន្តទៅទំព័របន្ទាប់
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
